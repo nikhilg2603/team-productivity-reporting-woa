@@ -7,6 +7,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const users = [];
+const projectRoutes = require("./routes/projectRoutes");
+app.use("/api/projects", projectRoutes);
+
+const teamRoutes = require("./routes/teamRoutes");
+app.use("/api/teams", teamRoutes);
+
 
 // Add a user
 app.post("/api/users", (req, res) => {
